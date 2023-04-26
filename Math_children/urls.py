@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Math_children.views import Index, Insertar_usuario, VistaUsuario,Ingreso,Logout,Download
-from Math_children.views import ListadoUsuario,RegistrarUsuario
+from Math_children.views import ListadoUsuario,RegistrarUsuario,ActualizarUsuario
 
 urlpatterns = [
     path('', Index,name='index'),
@@ -24,6 +24,7 @@ urlpatterns = [
     path('Download/', Download,name='Download'),
     path('RegistrarUsuario/', RegistrarUsuario.as_view(),name='RegistrarUsuario'),
     path('ListadoUsuario/', ListadoUsuario.as_view(),name='ListadoUsuario'),
+    path('ActualizarUsuario/', ActualizarUsuario.as_view(),name='ActualizarUsuario'),
     path('Ingreso/',Ingreso,name='Ingreso'),
     path('Logout/',Logout,name='Logout'),
     # path('logout/',LogoutView.as_view(template_name='index.html'), name='logout'),

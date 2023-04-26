@@ -11,6 +11,7 @@ from django.contrib import messages
 # from django.contrib.auth.decorators import login_required
 from django.views.generic import CreateView,ListView,UpdateView,DeleteView
 from .forms import formularioUsuario
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def Index(request):
     archivobase = open("Math_children\Templates\Index.html")
@@ -74,12 +75,30 @@ def VistaUsuario(request):
     parametros = Context({'usuario':usuario})
     paginaresultado = lectura.render(parametros)
     return HttpResponse(paginaresultado)
-#Vista basadas en clases
-class ListadoUsuario(ListView):
+#Vista basadas en clases con esta clase puedo listar todos los usuarios activos
+# class ListadoUsuario(ListView):
+#     model = Usuario
+#     template_name = 'VistaUsu.html'
+#     def get_queryset(self):
+#         return self.model.objects.filter(usuario_activo = True)
+class ListadoUsuario(LoginRequiredMixin, ListView):
     model = Usuario
     template_name = 'VistaUsu.html'
+    login_url = '/Ingreso/'
+
     def get_queryset(self):
-        return self.model.objects.filter(usuario_activo = True)
+        qs = super().get_queryset()
+        return qs.filter(id=self.request.user.id, usuario_activo=True)
+    
+class ActualizarUsuario(LoginRequiredMixin, UpdateView):
+    model = Usuario
+    template_name = 'ActualizarUsu.html'
+    fields = ['nombre', 'apellido', 'correo', 'telefono']
+    success_url = reverse_lazy('/ListadoUsuario/')
+    login_url = '/login/'
+
+    def get_object(self, queryset=None):
+        return self.request.user
 
 class RegistrarUsuario(CreateView):
     model = Usuario
