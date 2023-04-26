@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href='{% static "css/bootstrap.css" %}'>
+    <script src='{% static "js/bootstrap.js" %}'></script>
+</head>
+<body>
+    <h1 class="text-center">Formulario registro de grupos</h1>
+    <nav>
+               
+      <a class="align-center" href="/VistaEstudiantes/"><button  type="button" class="btn btn-primary btn-sm">Lista Estudiantes</button></a>
+      
+     
+      
+  </nav>
+
+    <form action="" method="POST" id="formulario" class="needs-validation" novalidate class="row"> 
+        {%csrf_token%} 
+
+           
+            
+            <div class="form-group col-md-3">
+                <label for="validationcedu" class="form-label">Nombre Grupo</label> <br>
+                <input  class="form-control" name="nombre_grupo" id="validationcedu"  required>
+                <div class="valid-feedback">
+                     input complete
+            </div>
+
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="validationnom" class="form-label">Nombre</label> <br>
+                <input class="form-control" type="text" name="nombre" id="validationnom"  required>
+                <div class="valid-feedback">
+                    input complete
+                  </div>
+            </div>
+    
+            <div class="form-group col-md-3">
+             <label for="validationape" class="form-label">Apellido</label><br>
+             <input class="form-control" type="text" name="apellido" id="validationape"  required>
+             <div class="valid-feedback">
+                input complete
+              </div>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="validationedad" class="form-label">Edad</label>
+                <br> <input class="form-control" type="text" name="edad" id="validationedad"  required>
+                <div class="valid-feedback">
+                    input complete
+                  </div>
+
+            </div>
+   
+    
+            <div class="form-group col-md-3">
+                <label for="validationcelu" class="form-label">Celular</label> <br>
+                <input class="form-control" type="text" name="celular" id="validationcelu"  required>
+                <div class="valid-feedback">
+                    input complete
+                  </div>
+
+            </div>
+    
+    
+            <div class="form-group col-md-3">
+                <label for="validationfech" class="form-label">Fecha naci</label> <br>
+                <input class="form-control" type="date" name="fechanaci" id="validationfech"  required>
+                <div class="valid-feedback">
+                    input complete
+                  </div>
+
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="validationpais" class="form-label">Pais</label> <br>
+                <input class="form-control" type="text" name="pais" id="validationpais"  required>
+                <div class="valid-feedback">
+                    input complete
+                  </div>
+
+            </div>
+   
+   
+            <div class="form-group col-md-3">
+                <label for="validationemail" class="form-label"> Email</label><br> 
+                <input class="form-control" type="text" name="email" id="validationemail"  required>
+                <div class="valid-feedback">
+                    input complete
+                  </div>
+
+            </div>
+    
+    
+            <div class="form-group col-md-3">
+                <label for="validationgen" class="form-label"> Genero</label><br> 
+                <select class="form-control" name="genero" id="validationgen"  required>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino" selected>Femenino</option>    
+                </select>
+                <div class="valid-feedback">
+                    input complete                 </div>
+            </div>
+
+            <div class="form-group col-md-3">
+                <label for="validationest" class="form-label"> Estado Civil</label><br> 
+                <select class="form-control" name="estado" id="validationest"  required>
+                    <option value="Casado">Casado</option>
+                    <option value="Soltero" selected>Soltero</option>    
+                    <option value="Divorciado" selected>Divorciado</option>   
+                </select>
+                <div class="valid-feedback">
+                    input complete
+                  </div>
+            </div>
+    
+    
+           
+        
+            <div class="col-md-8">
+                <br>
+                <button type="submit" class="btn btn-danger">Enviar</button>
+            </div>
+            
+        
+</div>
+
+
+
+{% if messages %}
+{% for mensaje  in messages%}
+
+<h1 style="color:blue ;">{{mensaje}}</h1>
+{% endfor %}
+{% endif %}
+    </form>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        'use strict'
+      
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+      
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+          form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+      
+            form.classList.add('was-validated')
+          }, false)
+        })
+      })()
+    </script>
+
+</body>
+</html>

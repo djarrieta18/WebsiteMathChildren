@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "css\bootstrap.css" %}'>
+    <script src='{% static "js\bootstrap.js" %}'></script>
+    <script src='{% static "js/sweetalert.min.js" %}'></script>
+    <title>Math Children!</title>
+    <link rel="stylesheet" href='{% static "css\Index.css" %}'>
+    <link rel="icon" type="image/x-icon" href='{% static "img\Math_logo.png" %}'>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src='{% static "img\Math_logo.png" %}' width="200px" height="110px">
+            <p class="logo">Aprende Ya!</p>
+            <nav>
+                <a href="">Datos Personales</a>
+                <a href="">Crear Grupo</a>
+                <a href="/VistaUsuario/">Atras</a>
+                <a href="/Logout/">Salir</a>
+              
+            </nav>
+        </div>
+    </header>
+   
+    <video width="720" height="480" autoplay muted  class="video">
+        <source src="../Modulo_descarga/archivos/prueba.mp4" type="video/mp4">
+        <source src="../Modulo_descarga/archivos/prueba.ogv" type="video/ogg">
+      Your browser does not support the video tag.
+      </video>
+      <br>
+      <br>
+    <div class="but">
+        <a href="downloadfile.php?file=prueba1.docx" class="btn btn-info btn-block">Descargar</a>
+    </div>
+   
+    <div class="text">
+        <h3>Sobre <span class="color-acento">Math Children</span></h3>
+        <p>
+          Este es un video juego que ayuda a  los niños de los grados primero, segundo y tercero de primaria, para que su proceso de aprendizaje sea un poco mas didacticoa a la hora de practicar las matematicas basicas.
+          El primer objetivo del video juego es ayudar en el proceso de identificacion y asociacion de valores con cantidades.
+          Como segundo objetivo buscamos contribuir en la primera etapa del proceso de aprendizaje de las sumas, siendo estas un buen comienzo en para empezar en el mundo matematico.
+          Nuestro tercer objetivo y no menos importante son las restas ya que asi como ganamos tambien perdemos cosas en nuestro diario vivir.
+        </p>
+        <h3> Requerimientos <span class="color-acento">Minimos del sistema</h3>
+        <p>   
+            Windows 10 <br>
+            4GB de memoria <br>
+            250MB espacio de disco
+        </p>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>
+            Contactos: <br>
+            Davinson Arrieta djarrieta45@misena.edu.co
+            <br>
+            Santiago Garcia djarrieta45@misena.edu.co
+            <br>
+            Kevin Alfonso  djarrieta45@misena.edu.co
+            <br>
+
+            </p>
+            <p id="Copyright">&copy; Math Children 2022</p>
+        </div>
+    </footer>
+</body>
+</html>

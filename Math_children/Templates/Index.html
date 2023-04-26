@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "css\bootstrap.css" %}'>
+    <script src='{% static "js\bootstrap.js" %}'></script>
+    <title>Math Children!</title>
+    <link rel="stylesheet" href='{% static "css\Index.css" %}'>
+    <link rel="icon" type="image/x-icon" href='{% static "img\Math_logo.png" %}'>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src='{% static "img\Math_logo.png" %}' width="200px" height="110px">
+            <p class="logo">Aprende Ya!</p>
+            <nav>
+                <a href="#Somos-math children">Quienes Somos</a>
+                <a href="#nuestros-programas">Nuestros Programas</a>
+                <a href="#caracteristicas">Caracteristicas</a>
+                <a href='/RegistrarUsuario/'>Crear cuenta</a>
+                <a href="/Ingreso/">Iniciar sesion</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        {% comment %} <img  src='{% static "img\mat9.webp" %}' > {% endcomment %}
+        <h1>Aprende Matematicas <br>De Forma Didactica</h1>
+        <a href=""> <button>Aprende Ya!!</button></a> 
+    </section>
+
+    <section id="Somos-math children">
+        <div class="container">
+            <div class="img-container"></div>
+            <div class="texto">
+
+                <h2>Somos <span class="color-acento">Math Children!</span></h2>
+                <p>Somos un equipo de estudiantes de programacion del SENA,
+                    que enfoca su proceso de aprendizaje en ayudar a que todos sigamos aprendiendo de manera didactica y facil con una vision de las matematicas sobre los videojuegos. 
+                </p>
+                <p> Buscamos que los estudiantes de los grados primero, segundo y tercero aprendan un poco de las matematicas basicas, para que a medida que vayan creciendo tengan unas buenas bases solidas 
+                        de aprendizaje en el area de las matematicas, ya que vemos que las matematicas son importantes en todos los aspectos de nuestra vida diaria.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="nuestros-programas">
+        <div class="container">
+            <h2>Nuestros Programas</h2>
+            <div class="programas">
+                <div class="carta">
+                    <h3>Contar</h3>
+                    <p>
+                        Asociaras cantidades de frutas con numeros
+                    </p>
+                   
+                </div> 
+                <div class="carta">
+                    <h3>Sumar</h3>
+                    <p>
+                        Aprenderas a sumar de manera divertida y sencilla
+                    </p>
+                   
+                </div>
+                <div class="carta">
+                    <h3>Restar</h3>
+                    <p>Reforzaras tus conocimientos de restar con divertidos y desafiantes niveles</p>
+                    
+                </div>
+                 
+            </div>
+        </div>
+    </section>
+
+    <section id="caracteristicas">
+        <div class="container">
+            <h3>Caracteristicas</h3>
+            <ul>
+                <li> Videojuego de plataformas</li>
+                <li> Sistema de niveles</li>
+                <li> Pregresion de la dificultad</li>
+                <li> Intuitivo</li>
+                <li> Didactico</li>
+                
+            </ul>
+        </div>
+    </section>
+
+    <section id="final">
+        <h2>Listo para Aprender matematicas?</h2>
+        <a href=""> <button>Aprende Ya!!</button></a> 
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                <br>
+                Contactos: <br>
+                Davinson Arrieta - djarrieta45@misena.edu.co
+                <br>
+            
+            </p>    
+            <p id="Copyright">&copy; Math Children 2022</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static "css\bootstrap.css" %}'>
+    <script src='{% static "js\bootstrap.js" %}'></script>
+    <script src='{% static "js/sweetalert.min.js" %}'></script>
+    <title>Math Children!</title>
+    <link rel="stylesheet" href='{% static "css\Index.css" %}'>
+    <link rel="icon" type="image/x-icon" href='{% static "img\Math_logo.png" %}'>
+</head>
+<header>
+    <div class="container">
+        <img src='{% static "img\Math_logo.png" %}' width="200px" height="110px">
+        <p class="logo">Aprende Ya!</p>
+        <nav>
+            <a href="">Datos Personales</a>
+            <a href="">Crear Grupoo</a>
+            <a href="/Download/">Descargar Videojuego</a>
+            <a href="/Logout/">Salir</a>
+          
+        </nav>
+    </div>
+</header>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% if object_list %}
+    <div class="container">
+        <table class="table table-success table-striped">
+            <br>
+            <tr>
+                
+                <td>Id</td>
+                <td>Username</td>
+                <td>Email</td>
+                <td>Nombres</td>
+                <td>Apellidos</td>
+                <td>Numero documento</td>
+                <td>Acciones</td>
+            </tr>
+            <thead>
+                <tbody>
+    
+          {% for e in object_list %}
+                <tr>
+                    <td>{{e.id      }}</td>
+                    <td>{{e.username       }}</td>
+                    <td>{{e.email         }}</td>
+                    <td>{{e.nombres         }}</td>
+                    <td>{{e.apellidos         }}</td>
+                    <td>{{e.documento}}</td>
+                    
+                    
+                   <td> <a href="/ActualizarEmpleado/{{e.id}}"><button  type="button" class="btn btn-primary btn-sm">Actualizar</button></a>
+                        <button type="button" onclick="borrar('{{e.id}}')" class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>  
+                </tr>
+            {% endfor %} 
+                </tbody> 
+            </thead>
+          </table>
+          <a href="/CrearEmpleado/"><button  type="button" class="btn btn-primary btn-sm">Crear nuevo empleado</button></a>
+    {% else %} 
+    <h1>No hay usuarios registrados</h1>
+    {% endif %}
+    
+       </div>
+       <script>
+        function borrar(id){
+            swal({
+      title: "Estas seguro de eliminar este registro?",
+      text: "Si lo borra no lo podras recuperar despues!",                                                                                                                                                                                                                                                                                                                                                                                          
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        location.href = "/BorrarEmpleado/" + id ;
+    
+         swal("El id que va a borrar es :" + id);
+        
+      } else {
+        swal("Su registro no fue borrado");
+      }
+    });
+        }
+       </script>
+
+
+    <!-- <footer>
+        <div class="container">
+            <p>
+                <br>
+                Contactos: <br>
+                Davinson Arrieta - djarrieta45@misena.edu.co
+                <br>
+            </p>    
+            <p id="Copyright">&copy; Math Children 2022</p>
+        </div>
+    </footer> -->
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reestablecer contraseña</title>
+    <link rel="stylesheet" href="../../Estilos/Contraseña.css">
+    <link rel="icon" type="image/x-icon" href="../../Imagenes/Math_logo.png" >
+</head>
+<body>
+    <section class="form-contraseña">
+        <p id="salir"><a href="../../Index.html">X</a></p>
+        <form id="password_reset_form" action="../../Modelo/Bd.php" method="post">
+            <h2>Reestablecer contraseña</h2>
+            <div class="mb-12_mt-12">
+                <label>Nueva contraseña:</label>
+                <input class="controls" type="password" name="nueva_contraseña" id="new_password" placeholder="Ingrese una nueva contraseña">
+                <label>Confirmar nueva contraseña:</label>
+                <input class="controls" type="password" name="confirmar_contraseña" id="confirm_password" placeholder="Confirme la nueva contraseña">
+                <input class="botons" type="submit" value="Enviar"><a href=""></a></input>
+            </div>
+        </form>
+    </section>
+</body>
+<script src="../../Controlador/Validacion_reestablecer.js"></script>
+</html>

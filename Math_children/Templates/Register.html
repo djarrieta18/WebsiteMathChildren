@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href='{% static "css/Register.css" %}'>
+    <link rel="stylesheet" href='{% static "css/bootstrap.css" %}'>
+    <link rel="icon" type="image/x-icon" href='{% static "img\Math_logo.png" %}'>
+</head>
+<body>
+    <section class="form-register">
+        <p id="salir"><a href="/Index/">X</a></p>
+        <form id="registration_form" action="" method="POST" class="needs-validation">
+            {% csrf_token %}
+            <h2>Formulario de registro</h2>
+                {{form}}
+                
+           <input class="botons" type="submit" value="Registrar"><a href="/Login/"></a></input> 
+            <p><a href="/Ingreso/">Ya estoy Registrado</a></p>
+        </form>      
+    </section>
+</body>
+<script src=""></script>
+</html>

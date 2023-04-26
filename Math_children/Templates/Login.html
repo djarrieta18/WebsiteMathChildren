@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href='{% static "css\Login.css" %}'>
+    <link rel="icon" type="image/x-icon" href='{% static "img\Math_logo.png" %}'>
+</head>
+<body>
+    <section class="form-inicio">
+        <form id="login_form" action="{% url 'Ingreso' %}" method="POST">
+            {% csrf_token as csrf_token %}
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <p id="salir"><a href='/Index/'>X</a></p>
+            <h2>Inicio de sesión</h2>
+            <div class="mb-3_mt-3">
+                <label>Nombre de usuario:</label>
+                <input class="controls" type="text" name="nombre_usu" placeholder="Ingrese su nombre de usuario">
+                <label class="form-password">Contraseña:</label>
+                <input class="controls" type="password" name="contrase_usu" placeholder="Ingrese su contraseña">
+                <a href="">Olvide mi contraseña</a>
+                <button class="btn btn-primary" type="submit" id="submit">LOGIN</button>
+                <!-- <input class="botons" type="submit" value="Ingresar"><a href="/VistaUsuario/"></a></input> -->
+            </div>
+        </form>
+    </section>
+</body>
+<script src=""></script>
+</html>
